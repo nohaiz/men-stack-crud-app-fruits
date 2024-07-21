@@ -1,18 +1,22 @@
+//Imported modules
 const express = require("express");
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-
 const dotenv = require("dotenv"); 
-dotenv.config();
 
+dotenv.config();
 const app = express();
+
+//Middleware
 app.use(morgan('dev'));
 
 
 
 
+//Routes
 
-app.get("/", async (req, res) => {
+//Landing Page
+app.get("/", (req, res, next) => {
     res.render("index.ejs");
   });
 
